@@ -1,0 +1,1 @@
+json.partial! "icorrections/icorrection", icorrection: @icorrection

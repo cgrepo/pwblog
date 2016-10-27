@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @icorrection.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @icorrection.description %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @icorrection.User %>
+</p>
+
+<%= link_to 'Edit', edit_icorrection_path(@icorrection) %> |
+<%= link_to 'Back', icorrections_path %>

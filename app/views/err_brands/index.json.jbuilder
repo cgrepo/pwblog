@@ -1,0 +1,1 @@
+json.array! @err_brands, partial: 'err_brands/err_brand', as: :err_brand

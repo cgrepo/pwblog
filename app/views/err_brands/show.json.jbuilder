@@ -1,0 +1,1 @@
+json.partial! "err_brands/err_brand", err_brand: @err_brand

@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Icorrections</h1>
+
+<div class="container-fluid">
+  <div class="table-responsive">
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Class</th>
+          <th>User</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @icorrections.each do |icorrection| %>
+        <tr>
+          <td><%= icorrection.title %></td>
+          <td><%= icorrection.description %></td>
+          <td><%= icorrection.genus %></td>
+          <td><%= icorrection.User %></td>
+          <td><%= link_to 'Show', icorrection %></td>
+          <td><%= link_to 'Edit', edit_icorrection_path(icorrection) %></td>
+          <td><%= link_to 'Destroy', icorrection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+    </table>
+  </div>
+</div>
+
+<br>
+
+<%= link_to 'New Icorrection', new_icorrection_path %>

@@ -1,0 +1,1 @@
+json.array! @icorrections, partial: 'icorrections/icorrection', as: :icorrection
