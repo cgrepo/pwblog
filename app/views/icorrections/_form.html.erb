@@ -18,12 +18,12 @@
       </div>
       <div class="col-xs col-md-2">
         <%= f.label :Tipo %><br>  
-        <%= f.select :genus, [ ['EXECUTION'],['ZONEF'] ], 
+        <%= f.select :genus, [ ['EXECUTION'],['ZONEF'], ['SYSO'] ], 
         {:include_blank => true},  {class:'btn btn-default dropdown-toggle smfont'} %>
       </div>
       <div class="col-xs col-md-2">
         <%= f.label :User_id %><br>
-        <%= f.collection_select :User, User.all, :name, :name,
+        <%= f.collection_select :User_id, User.all, :id, :name,
         {:include_blank => true }, {class:'btn btn-default dropdown-toggle'} %>
       </div>
     </div>
