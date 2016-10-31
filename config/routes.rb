@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :sub_targets, only:[:index, :new, :create, :destroy]
+  resources :targets
+  resources :sub_targets, only:[:index, :new, :create, :destroy, :edit]
   resources :icorrections
   resources :issues
   resources :err_brands
