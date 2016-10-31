@@ -1,1 +1,0 @@
-json.array! @sub_targets, partial: 'sub_targets/sub_target', as: :sub_target

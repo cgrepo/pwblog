@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161031212357) do
+ActiveRecord::Schema.define(version: 20161026180642) do
 
   create_table "err_brands", force: :cascade do |t|
     t.string   "genus"
@@ -41,21 +41,6 @@ ActiveRecord::Schema.define(version: 20161031212357) do
   end
 
   add_index "issues", ["User_id"], name: "index_issues_on_User_id"
-
-  create_table "sub_targets", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "targets", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "SubTarget_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  add_index "targets", ["SubTarget_id"], name: "index_targets_on_SubTarget_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
