@@ -1,0 +1,1 @@
+json.partial! "sub_targets/sub_target", sub_target: @sub_target
