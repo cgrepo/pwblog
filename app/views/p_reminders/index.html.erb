@@ -24,9 +24,10 @@
         <td><%= p_reminder.solution %></td>
         <td><%= p_reminder.genus %></td>
         <td><%= p_reminder.subgenus %></td>
-        <td><%= link_to 'Show', p_reminder %></td>
-        <td><%= link_to 'Edit', edit_p_reminder_path(p_reminder) %></td>
-        <td><%= link_to 'Destroy', p_reminder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', p_reminder, class:'btn btn-default  btn-sm' %></td>
+        <td><%= link_to 'Edit', edit_p_reminder_path(p_reminder), class:'btn btn-default  btn-sm' %></td>
+        <td><%= link_to 'Destroy', p_reminder, method: :delete, data: { confirm: 'Are you sure?' }, 
+        class:'btn btn-default  btn-sm' %></td>
         </tr>
       <% end %>
     </tbody>
