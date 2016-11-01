@@ -1,0 +1,1 @@
+json.array! @p_reminders, partial: 'p_reminders/p_reminder', as: :p_reminder

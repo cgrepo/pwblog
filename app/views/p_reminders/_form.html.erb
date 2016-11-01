@@ -1,0 +1,52 @@
+<%= form_for(@p_reminder) do |f| %>
+  <% if @p_reminder.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@p_reminder.errors.count, "error") %> prohibited this p_reminder from being saved:</h2>
+
+      <ul>
+      <% @p_reminder.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs col-md-3">
+      <%= f.label :title %><br>
+      <%= f.text_field :title, class:'form-control ' %>
+    </div>
+    <div class="col-xs col-md-3">
+      <%= f.label :Tipo %><br>
+      <%= f.select :genus, [ ['CODERS'],['OPENBSD'],['CENTOS'] ], 
+        {:include_blank => true},  {class:'btn btn-default dropdown-toggle smfont'} %>
+    </div>
+    <div class="col-xs col-md-3">
+      <%= f.label :SubTipo %><br>
+      <%= f.select :subgenus, [ ['RAILS'],['TCPDUMP'],['SENDMAIL'], ['PF'] ], 
+        {:include_blank => true},  {class:'btn btn-default dropdown-toggle smfont'} %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs col-md-6">
+      <%= f.label :description %><br>
+      <%= f.text_area :description, size:'85x4' %>
+    </div>
+    <div class="col-xs col-md-6">
+      <%= f.label :solution %><br>
+      <%= f.text_area :solution, size:'85x4' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs col-md-2">
+        <%= f.label :User_id %><br>
+        <%= f.collection_select :User_id, User.all, :id, :name,
+        {:include_blank => true }, {class:'btn btn-default dropdown-toggle'} %>
+      </div>
+    <div class="col-xs col-md-2">
+      <br>
+      <%= f.submit %>
+    </div>
+  </div>
+</div>
+<% end %>

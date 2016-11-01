@@ -30,11 +30,10 @@
       </div>
     </div>
   </section>
-  <%= link_to ' ISSUES', issues_path %>
-  <%= link_to ' ICCORRECTS', icorrections_path %>
-  <%= link_to ' ERRBRANDS', err_brands_path %>
-  <%= link_to ' TARGETS', targets_path %>
-  <%= link_to ' SUB_TARGETS', sub_targets_path %>
+  <%= link_to ' ISSUES', issues_path, class:'btn btn-default btn-sm btn-transparent ' %>
+  <%= link_to ' ICCORRECTS', icorrections_path, class:'btn btn-default btn-sm btn-transparent ' %>
+  <%= link_to ' ERRBRANDS', err_brands_path, class:'btn btn-default btn-sm btn-transparent ' %>
+  <%= link_to ' REMINDERS', p_reminders_path, class:'btn btn-default btn-sm btn-transparent ' %>
   <%= yield %>
 
 </body>

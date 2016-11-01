@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing P Reminders</h1>
+
+<div class="container-fluid">
+  <div class="table-responsive">
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Solution</th>
+      <th>Genus</th>
+      <th>Subgenus</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @p_reminders.each do |p_reminder| %>
+      <tr>
+        <td><%= p_reminder.title %></td>
+        <td><%= p_reminder.description %></td>
+        <td><%= p_reminder.solution %></td>
+        <td><%= p_reminder.genus %></td>
+        <td><%= p_reminder.subgenus %></td>
+        <td><%= link_to 'Show', p_reminder %></td>
+        <td><%= link_to 'Edit', edit_p_reminder_path(p_reminder) %></td>
+        <td><%= link_to 'Destroy', p_reminder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+    </table>
+  </div>
+</div>
+<br>
+
+<%= link_to 'New P reminder', new_p_reminder_path %>

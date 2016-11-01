@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @p_reminder.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @p_reminder.description %>
+</p>
+
+<p>
+  <strong>Solution:</strong>
+  <%= @p_reminder.solution %>
+</p>
+
+<p>
+  <strong>Genus:</strong>
+  <%= @p_reminder.genus %>
+</p>
+
+<p>
+  <strong>Subgenus:</strong>
+  <%= @p_reminder.subgenus %>
+</p>
+
+<%= link_to 'Edit', edit_p_reminder_path(@p_reminder) %> |
+<%= link_to 'Back', p_reminders_path %>

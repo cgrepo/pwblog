@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161026180642) do
+ActiveRecord::Schema.define(version: 20161101003934) do
 
   create_table "err_brands", force: :cascade do |t|
     t.string   "genus"
@@ -41,6 +41,19 @@ ActiveRecord::Schema.define(version: 20161026180642) do
   end
 
   add_index "issues", ["User_id"], name: "index_issues_on_User_id"
+
+  create_table "p_reminders", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "solution"
+    t.string   "genus"
+    t.string   "subgenus"
+    t.integer  "User_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "p_reminders", ["User_id"], name: "index_p_reminders_on_User_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
