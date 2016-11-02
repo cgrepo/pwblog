@@ -4,8 +4,8 @@ class IcorrectionsController < ApplicationController
   # GET /icorrections
   # GET /icorrections.json
   def index
-    
-    @icorrections = current_user.Icorrection.order(:genus)
+    #@icorrections = current_user.Icorrection.order(:genus)
+    @icorrections = Icorrection.order(:genus)
   end
 
   # GET /icorrections/1
