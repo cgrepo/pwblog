@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Icorrections</h1>
+<h1>Listado de Icorrections</h1>
 
-<div class="container-fluid">
+<div class="container">
   <div class="table-responsive">
     <table class="table table-hover table-striped">
       <thead>
         <tr>
           <th>Title</th>
-          <th>Description</th>
+          <!--<th>Description</th> -->
           <th>Class</th>
           <th colspan="3"></th>
         </tr>
@@ -16,8 +16,8 @@
       <tbody>
       <% @icorrections.each do |icorrection| %>
         <tr>
-          <td><%= icorrection.title %></td>
-          <td><%= icorrection.description %></td>
+          <td title='<%= icorrection.description %>'><%= icorrection.title %></td>
+          <!--<td><%= icorrection.description %></td> -->
           <td><%= icorrection.genus %></td>
           <td><%= link_to 'Show', icorrection %></td>
           <td><%= link_to 'Edit', edit_icorrection_path(icorrection) %></td>
