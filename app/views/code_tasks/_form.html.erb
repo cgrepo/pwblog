@@ -14,11 +14,11 @@
   <div class='row'>
     <div class="col-xs col-md-4">
       <%= f.label :title %><br>
-      <%= f.text_field :title %>
+      <%= f.text_field :title, class:'form-control' %>
     </div>
     <div class="col-xs col-md-4">
       <%= f.label :description %><br>
-      <%= f.text_field :description %>
+      <%= f.text_area :description, class:'form-control', rows:5 %>
     </div>
     <div class="col-xs col-md-1">
       <%= f.label :done %><br>
@@ -26,7 +26,8 @@
     </div>
     <div class="col-xs col-md-2">
       <%= f.label :user_id %><br>
-      <%= f.text_field :user_id %>
+      <%= f.collection_select :user_id, User.all, :id, :name,
+        {:include_blank => true }, {class:'btn btn-default dropdown-toggle'} %>
     </div>
     <div class="col-xs col-md-1">
       <%= f.submit %>

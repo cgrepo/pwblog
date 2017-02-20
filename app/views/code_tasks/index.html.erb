@@ -29,7 +29,7 @@
                 <td><%= code_task.title %></td>
                 <td><%= code_task.description %></td>
                 <td><%= code_task.done %></td>
-                <td><%= code_task.user %></td>
+                <td><%= code_task.user.name %></td>
                 <td><%= link_to 'Show', code_task %></td>
                 <td><%= link_to 'Edit', edit_code_task_path(code_task) %></td>
                 <td><%= link_to 'Destroy', code_task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
