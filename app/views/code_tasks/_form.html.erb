@@ -1,0 +1,37 @@
+<%= form_for(@code_task) do |f| %>
+  <% if @code_task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@code_task.errors.count, "error") %> prohibited this code_task from being saved:</h2>
+
+      <ul>
+      <% @code_task.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class='container'>
+  <div class='row'>
+    <div class="col-xs col-md-4">
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </div>
+    <div class="col-xs col-md-4">
+      <%= f.label :description %><br>
+      <%= f.text_field :description %>
+    </div>
+    <div class="col-xs col-md-1">
+      <%= f.label :done %><br>
+      <%= f.check_box :done %>
+    </div>
+    <div class="col-xs col-md-2">
+      <%= f.label :user_id %><br>
+      <%= f.text_field :user_id %>
+    </div>
+    <div class="col-xs col-md-1">
+      <%= f.submit %>
+    </div>
+    
+  </div>
+</div>
+<% end %>

@@ -1,0 +1,1 @@
+json.partial! "code_tasks/code_task", code_task: @code_task

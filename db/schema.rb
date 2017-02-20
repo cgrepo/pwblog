@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161101003934) do
+ActiveRecord::Schema.define(version: 20170220160321) do
+
+  create_table "code_tasks", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.boolean  "done"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "code_tasks", ["user_id"], name: "index_code_tasks_on_user_id"
 
   create_table "err_brands", force: :cascade do |t|
     t.string   "genus"

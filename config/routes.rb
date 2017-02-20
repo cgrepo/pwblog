@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :code_tasks
   resources :p_reminders
   resources :icorrections
   resources :issues
