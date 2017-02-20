@@ -3,7 +3,9 @@
   <div class='row'>
     <div class='col-xs-12 col-md-12'>
       <h1>Listing Code Tasks</h1>
-      <%= content_tag(:span, link_to 'New Code task', new_code_task_path, align:'rigth'  ) %>
+      <span class='pull-rigth'>
+       <%= link_to 'New Code task', new_code_task_path, class:'btn btn-default btn-sm' %>
+      </span>
     </div>
   </div>
 </div>
