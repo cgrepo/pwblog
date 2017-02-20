@@ -1,24 +1,30 @@
 <p id="notice"><%= notice %></p>
+<div class='container'>
+  <div class='row'>
+    <div class='col-xs-8 col-md-8'>
+      <p>
+        <strong>Title:</strong>
+        <%= @code_task.title %>
+      </p>
+      
+      <p>
+        <strong>Description:</strong>
+        <%= @code_task.description %>
+      </p>
+      
+      <p>
+        <strong>Done:</strong>
+        <%= @code_task.done %>
+      </p>
+      
+      <p>
+        <strong>User:</strong>
+        <%= @code_task.user %>
+      </p>
+      
+      <%= link_to 'Edit', edit_code_task_path(@code_task) %> |
+      <%= link_to 'Back', code_tasks_path %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @code_task.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @code_task.description %>
-</p>
-
-<p>
-  <strong>Done:</strong>
-  <%= @code_task.done %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @code_task.user %>
-</p>
-
-<%= link_to 'Edit', edit_code_task_path(@code_task) %> |
-<%= link_to 'Back', code_tasks_path %>
+    </div>    
+  </div>
+</div>

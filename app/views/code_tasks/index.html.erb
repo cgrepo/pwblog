@@ -1,33 +1,41 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Listing Code Tasks</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Done</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @code_tasks.each do |code_task| %>
-      <tr>
-        <td><%= code_task.title %></td>
-        <td><%= code_task.description %></td>
-        <td><%= code_task.done %></td>
-        <td><%= code_task.user %></td>
-        <td><%= link_to 'Show', code_task %></td>
-        <td><%= link_to 'Edit', edit_code_task_path(code_task) %></td>
-        <td><%= link_to 'Destroy', code_task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Code task', new_code_task_path %>
+<div class='container'>
+  <div class='row'>
+    <div class='col-xs-12 col-md-12'>
+      <h1>Listing Code Tasks</h1>
+      <%= content_tag(:span, link_to 'New Code task', new_code_task_path, align:'rigth'  ) %>
+    </div>
+  </div>
+</div>
+<div class='container'>
+  <div class='row'>
+    <div class='col-xs-12 col-md-12'>
+      <div class="table-responsive">
+        <table class="table table-hover table-striped">
+            <thead>
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Done</th>
+              <th>User</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+            <tbody>
+            <% @code_tasks.each do |code_task| %>
+              <tr>
+                <td><%= code_task.title %></td>
+                <td><%= code_task.description %></td>
+                <td><%= code_task.done %></td>
+                <td><%= code_task.user %></td>
+                <td><%= link_to 'Show', code_task %></td>
+                <td><%= link_to 'Edit', edit_code_task_path(code_task) %></td>
+                <td><%= link_to 'Destroy', code_task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
