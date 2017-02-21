@@ -4,7 +4,7 @@ class CodeTasksController < ApplicationController
   # GET /code_tasks
   # GET /code_tasks.json
   def index
-    @code_tasks = CodeTask.all
+    @code_tasks = CodeTask.all.order(done: :desc)
   end
 
   # GET /code_tasks/1
