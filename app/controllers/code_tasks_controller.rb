@@ -69,6 +69,6 @@ class CodeTasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def code_task_params
-      params.require(:code_task).permit(:title, :description, :done, :user_id)
+      params.require(:code_task).permit(:title, :description, :done, :codebranch, :user_id)
     end
 end

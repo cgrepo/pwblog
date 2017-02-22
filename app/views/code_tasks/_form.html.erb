@@ -10,16 +10,24 @@
       </ul>
     </div>
   <% end %>
-<div class='container'>
+<div class='container be-round_ligth_gray'>
   <div class='row'>
+    <div class='col-xs col-md-2'>
+      <%= f.label :Code_branch %><br>
+      <%= f.select :codebranch, [['PWBLOG'],['DISPOSE']],{:include_blank => false},  {class:'btn btn-default dropdown-toggle smfont'} %>
+    </div>
     <div class="col-xs col-md-4">
       <%= f.label :title %><br>
       <%= f.text_field :title, class:'form-control' %>
     </div>
-    <div class="col-xs col-md-4">
+  </div>
+  <div class='row'>
+    <div class="col-xs col-md-6">
       <%= f.label :description %><br>
       <%= f.text_area :description, class:'form-control', rows:5 %>
     </div>
+  </div>
+  <div class='row'>
     <div class="col-xs col-md-1">
       <%= f.label :done %><br>
       <%= f.check_box :done, class:'check_box' %>
@@ -29,10 +37,12 @@
       <%= f.collection_select :user_id, User.all, :id, :name,
         {:include_blank => true }, {class:'btn btn-default dropdown-toggle'} %>
     </div>
-    <div class="col-xs col-md-1">
-      <%= f.submit %>
+  </div>
+    <div class='row'>
+      <div class="col-xs col-md-1">
+        <%= f.submit %>
+      </div>
     </div>
-    
   </div>
 </div>
 <% end %>
