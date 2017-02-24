@@ -18,12 +18,12 @@
     </div>
     <div class="col-xs col-md-3">
       <%= f.label :Tipo %><br>
-      <%= f.select :genus, [ ['CODERS'],['OPENBSD'],['LINUX'] ], 
+      <%= f.select :genus, [ ['CODERS'],['OPENBSD'],['LINUX'], ['DBS'] ], 
         {:include_blank => true},  {class:'btn btn-default dropdown-toggle smfont'} %>
     </div>
     <div class="col-xs col-md-3">
       <%= f.label :SubTipo %><br>
-      <%= f.select :subgenus, [ ['RAILS'],['TCPDUMP'],['SENDMAIL'], ['PF'], ['GITHUB'], ['HEROKU'] ], 
+      <%= f.select :subgenus, [ ['RAILS'],['TCPDUMP'],['SENDMAIL'], ['PF'], ['GITHUB'], ['HEROKU'], ['SQLITE'], ['MYSQL'], ['POSTGRES'] ], 
         {:include_blank => true},  {class:'btn btn-default dropdown-toggle smfont'} %>
     </div>
   </div>
