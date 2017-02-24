@@ -5,7 +5,7 @@ class PRemindersController < ApplicationController
   # GET /p_reminders.json
   def index
     #@p_reminders = current_user.PReminder.all
-    @p_reminders = PReminder.all
+    @p_reminders = PReminder.all.order(:genus)
   end
 
   # GET /p_reminders/1
