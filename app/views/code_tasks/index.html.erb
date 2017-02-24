@@ -16,6 +16,7 @@
         <table class="table table-hover table-striped">
             <thead>
             <tr>
+              <th>CBranch</th>
               <th>Title</th>
               <th>Description</th>
               <th>Done</th>
@@ -26,6 +27,7 @@
             <tbody>
             <% @code_tasks.each do |code_task| %>
               <tr>
+                <td><%= code_task.codebranch %></td>
                 <td><%= code_task.title %></td>
                 <td><%= code_task.description %></td>
                 <td><%= code_task.done %></td>
