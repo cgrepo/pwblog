@@ -6,6 +6,8 @@
       <span class='pull-rigth'>
        <%= link_to 'New Code task', new_code_task_path, class:'btn btn-default btn-md' %>
       </span>
+       <br>
+       <br>
     </div>
   </div>
 </div>
@@ -30,11 +32,16 @@
                 <td><%= code_task.codebranch %></td>
                 <td><%= code_task.title %></td>
                 <td><%= code_task.description %></td>
-                <td><%= code_task.done %></td>
+                <%if code_task.done %>
+                  <td><%= octicon 'issue-closed', class:'rigth' %></td>
+                <% else %>
+                  <td><%= octicon 'x', class:'left' %></td>
+                <% end %>
                 <td><%= code_task.user.name %></td>
-                <td><%= link_to 'Show', code_task %></td>
-                <td><%= link_to 'Edit', edit_code_task_path(code_task) %></td>
-                <td><%= link_to 'Destroy', code_task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%= link_to '', code_task, class:'btn btn-md glyphicon glyphicon-search' %></td>
+                <td><%= link_to '', edit_code_task_path(code_task), class:'btn btn-md glyphicon glyphicon-cog' %></td>
+                <td><%= link_to '', code_task, method: :delete, data: { confirm: 'Are you sure?' },
+                    class:'btn btn-md glyphicon glyphicon-erase' %></td>
               </tr>
             <% end %>
           </tbody>
