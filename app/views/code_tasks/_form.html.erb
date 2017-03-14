@@ -1,4 +1,4 @@
-<%= form_for(@code_task) do |f| %>
+<%= bootstrap_form_for(@code_task) do |f| %>
   <% if @code_task.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@code_task.errors.count, "error") %> prohibited this code_task from being saved:</h2>
@@ -13,35 +13,29 @@
 <div class='container be-round_ligth_gray'>
   <div class='row'>
     <div class='col-xs col-md-2'>
-      <%= f.label :Code_branch %><br>
-      <%= f.select :codebranch, [['PWBLOG'],['DISPOSE'],['ACTIVEINVENTORY'], ['BIBLIOS'] ],{:include_blank => false},  {class:'btn btn-default dropdown-toggle smfont'} %>
+      <%= f.select_with_bootstrap :codebranch, [['PWBLOG'],['DISPOSE'],['ACTIVEINVENTORY'], ['BIBLIOS'] ],{:include_blank => false},  
+          {class:'btn btn-default dropdown-toggle smfont'} %>
     </div>
     <div class="col-xs col-md-4">
-      <%= f.label :title %><br>
-      <%= f.text_field :title, class:'form-control' %>
+      <%= f.text_field_with_bootstrap :title, class:'form-control' %>
     </div>
   </div>
   <div class='row'>
     <div class="col-xs col-md-6">
-      <%= f.label :description %><br>
-      <%= f.text_area :description, class:'form-control', rows:5 %>
+      <%= f.text_area_with_bootstrap :description, class:'form-control', rows:5 %>
     </div>
   </div>
   <div class='row'>
     <div class="col-xs col-md-1">
-      <%= f.label :done %><br>
-      <%= f.check_box :done, class:'check_box' %>
+      <%= f.check_box_with_bootstrap :done, class:'check_box' %>
     </div>
     <div class="col-xs col-md-2">
-      <%= f.label :user_id %><br>
-      <%= f.collection_select :user_id, User.all, :id, :name,
+      <%= f.collection_select_with_bootstrap :user_id, User.all, :id, :name,
         {:include_blank => true }, {class:'btn btn-default dropdown-toggle'} %>
     </div>
-  </div>
-    <div class='row'>
-      <div class="col-xs col-md-1">
-        <%= f.submit %>
-      </div>
+    <div class='col-xs col-md-3'>
+      <br>
+      <%= f.submit 'save', class:'btn btn-default btn-md btn-block' %>
     </div>
   </div>
 </div>
