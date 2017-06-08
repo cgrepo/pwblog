@@ -4,7 +4,7 @@ class CodeTasksController < ApplicationController
   # GET /code_tasks
   # GET /code_tasks.json
   def index
-    @code_tasks = CodeTask.all.order(:done)
+    @code_tasks = CodeTask.all.order(:codebranch).order(:created_at).order(:done)
   end
 
   # GET /code_tasks/1
