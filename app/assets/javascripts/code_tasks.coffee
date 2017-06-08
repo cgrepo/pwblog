@@ -1,6 +1,6 @@
 $(document).on "turbolinks:load", ->
     $tableH = $('#codeTbl')
-    alert $tableH.text()
+    #alert $tableH.text()
     $tableH.on 'click', 'td', ->
       alert $(this).text()
 #este ejemplo funciona bien solo hay que adaptarlo
