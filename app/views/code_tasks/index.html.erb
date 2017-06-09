@@ -13,40 +13,21 @@
 </div>
 <div class='container'>
   <div class='row'>
-    <div class='col-xs-12 col-md-12'>
-      <div class="table-responsive">
-        <table class="table table-hover table-striped" id='codeTbl'>
-          <thead>
-            <tr>
-              <th>CBranch</th>
-              <th>Title</th>
-              <th>Description</th>
-              <th>Done</th>
-              <th>User</th>
-              <th colspan="3"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @code_tasks.each do |code_task| %>
-              <tr>
-                <td><%= code_task.codebranch %></td>
-                <td><%= code_task.title %></td>
-                <td><%= code_task.description %></td>
-                <%if code_task.done %>
-                  <td><%= octicon 'issue-closed', class:'rigth' %></td>
-                <% else %>
-                  <td><%= octicon 'x', class:'left' %></td>
-                <% end %>
-                <td><%= code_task.user.name %></td>
-                <td><%= link_to '', code_task, class:'btn btn-md glyphicon glyphicon-search' %></td>
-                <td><%= link_to '', edit_code_task_path(code_task), class:'btn btn-md glyphicon glyphicon-cog' %></td>
-                <td><%= link_to '', code_task, method: :delete, data: { confirm: 'Are you sure?' },
-                    class:'btn btn-md glyphicon glyphicon-erase' %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
+    <div class='col-xs col-md-6'>
+      <%= bootstrap_form_tag  :html => {id:'branchOrder'}  do |f| %>
+        <%= f.form_group :cryteria, label:{text:'Buscar por:'} do %>
+          <br>
+          <%= f.radio_button :cryteria_level, 0, label: 'ALL', inline: true %>
+          <%= f.radio_button :cryteria_level, 1, label: 'ACTIVEIT', inline: true %>
+          <%= f.radio_button :cryteria_level, 2, label: 'BIBLIOS', inline: true %>
+          <%= f.radio_button :cryteria_level, 3, label: 'DISPOSE', inline: true %>
+          <%= f.radio_button :cryteria_level, 4, label: 'PWBLOG', inline: true %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-xs-12 col-md-12' id='showData'>
     </div>
   </div>
 </div>

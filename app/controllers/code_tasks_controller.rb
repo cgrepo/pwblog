@@ -4,7 +4,7 @@ class CodeTasksController < ApplicationController
   # GET /code_tasks
   # GET /code_tasks.json
   def index
-    @code_tasks = CodeTask.all.order(:codebranch).order(created_at: :desc).order(done: :desc)
+    # @code_tasks = CodeTask.all.order(:codebranch).order(created_at: :desc).order(done: :desc)
   end
 
   # GET /code_tasks/1
@@ -60,7 +60,18 @@ class CodeTasksController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
+  def dataTable
+    byebug
+    case params[:code_task][:cryteria]
+      when '0'
+        @code_tasks = CodeTask.all.order(:codebranch).order(created_at: :desc).order(done: :desc)
+    end
+    respond_to do |format|
+      format.html {render :partial => 'dataTable'}
+      format.js {}
+    end
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_code_task
@@ -69,6 +80,6 @@ class CodeTasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def code_task_params
-      params.require(:code_task).permit(:title, :description, :done, :codebranch, :user_id)
+      params.require(:code_task).permit(:title, :description, :done, :codebranch, :user_id, :cryteria)
     end
 end

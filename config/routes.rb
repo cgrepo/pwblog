@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :code_tasks
+  resources :code_tasks do
+    collection do
+      get 'dataTable'
+    end
+  end
   resources :p_reminders
   resources :icorrections
   resources :issues
