@@ -62,10 +62,18 @@ class CodeTasksController < ApplicationController
   end
   
   def dataTable
-    byebug
     case params[:code_task][:cryteria]
       when '0'
         @code_tasks = CodeTask.all.order(:codebranch).order(created_at: :desc).order(done: :desc)
+      when '1'
+        @code_tasks = CodeTask.all.where(codebranch:'ACTIVEINVENTORY').order(:codebranch).order(created_at: :desc).order(done: :desc)
+      when '2'
+        @code_tasks = CodeTask.all.where(codebranch:'BIBLIOS').order(:codebranch).order(created_at: :desc).order(done: :desc)
+      when '3'
+        @code_tasks = CodeTask.all.where(codebranch:'DISPOSE').order(:codebranch).order(created_at: :desc).order(done: :desc)
+      when '4'
+        @code_tasks = CodeTask.all.where(codebranch:'PWBLOG').order(:codebranch).order(created_at: :desc).order(done: :desc)  
+      
     end
     respond_to do |format|
       format.html {render :partial => 'dataTable'}
