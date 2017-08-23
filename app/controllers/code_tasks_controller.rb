@@ -72,8 +72,9 @@ class CodeTasksController < ApplicationController
       when '3'
         @code_tasks = CodeTask.all.where(codebranch:'DISPOSE').order(:codebranch).order(created_at: :desc).order(done: :desc)
       when '4'
-        @code_tasks = CodeTask.all.where(codebranch:'PWBLOG').order(:codebranch).order(created_at: :desc).order(done: :desc)  
-      
+        @code_tasks = CodeTask.all.where(codebranch:'PWBLOG').order(:codebranch).order(created_at: :desc).order(done: :desc)
+      when '5'
+        @code_tasks = CodeTask.all.where(codebranch:'SS').order(:codebranch).order(created_at: :desc).order(done: :desc)
     end
     respond_to do |format|
       format.html {render :partial => 'dataTable'}
